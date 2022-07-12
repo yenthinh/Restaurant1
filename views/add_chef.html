@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+        <title>Add Chef</title>
+        <meta content="" name="description" />
+        <meta content="" name="keywords" />
+
+        <!-- Favicons -->
+        <link href="/assets/img/favicon.png" rel="icon" />
+        <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i"
+            rel="stylesheet"
+        />
+
+        <!-- Vendor CSS Files -->
+        <link
+            href="/assets/vendor/animate.css/animate.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="/assets/vendor/bootstrap/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <link
+            href="/assets/vendor/boxicons/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="/assets/vendor/glightbox/css/glightbox.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="/assets/vendor/swiper/swiper-bundle.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Template Main CSS File -->
+        <link href="/assets/css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/assets/css/admin.css" />
+    </head>
+    <body>
+        {{template "navbar"}}
+        <!--Main layout-->
+        <main style="margin-top: 58px">
+            <div class="container pt-4">
+                <form action="/admin/addchef/action" method="post">
+                    <div class="mb-3 row">
+                        <label for="ten" class="col-sm-2 col-form-label">
+                            Tên
+                        </label>
+                        <div class="col-sm-10">
+                            <input
+                                type="text"
+                                class="form-control-plaintext bg-warning"
+                                name="names"
+                                id="ten"
+                                value=""
+                            />
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="chuc-vu" class="col-sm-2 col-form-label">
+                            Chức vụ
+                        </label>
+                        <div class="col-sm-10">
+                            <input
+                                type="text"
+                                class="form-control-plaintext bg-warning"
+                                name="posi"
+                                id="chuc-vu"
+                                value=""
+                            />
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="anh" class="col-sm-2 col-form-label">
+                            Ảnh
+                        </label>
+                        <div class="col-sm-10">
+                            <input
+                                type="number"
+                                class="form-control-plaintext bg-warning"
+                                name="pic"
+                                id="anh"
+                                value=""
+                            />
+                        </div>
+                    </div>
+                    <input class="btn btn-success" value="Lưu" type="submit" />
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

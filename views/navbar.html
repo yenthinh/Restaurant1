@@ -1,0 +1,73 @@
+{{define "navbar"}}
+<!--Main Navigation-->
+<header>
+    <!-- Sidebar -->
+    <nav
+        id="sidebarMenu"
+        class="collapse d-lg-block sidebar collapse bg-white"
+    >
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <a
+                    href="/admin"
+                    class="list-group-item list-group-item-action py-2 ripple"
+                >
+                    <i class="fas fa-chart-area fa-fw me-3"></i>
+                    <span>Thông tin đầu bếp</span>
+                </a>
+                <a
+                    href="/admin/menu"
+                    class="list-group-item list-group-item-action py-2 ripple"
+                >
+                    <i class="fas fa-lock fa-fw me-3"></i>
+                    <span>Thực đơn</span>
+                </a>
+                <a
+                    href="#"
+                    class="list-group-item list-group-item-action py-2 ripple"
+                >
+                    <i class="fas fa-chart-line fa-fw me-3"></i>
+                    <span>Danh sách đặt bàn</span>
+                </a>
+                <a
+                    href="#"
+                    class="list-group-item list-group-item-action py-2 ripple"
+                >
+                    <i class="fas fa-chart-pie fa-fw me-3"></i>
+                    <span>Liên hệ</span>
+                </a>
+                <a
+                href="/admin/addchef"
+                class="list-group-item list-group-item-action py-2 ripple"
+                >
+                <i class="fas fa-chart-pie fa-fw me-3"></i>
+                <span>Chỉnh sửa đầu bếp</span>
+                </a>
+                <a
+                href="/admin/addmenu"
+                class="list-group-item list-group-item-action py-2 ripple"
+                >
+                <i class="fas fa-chart-pie fa-fw me-3"></i>
+                <span>Chỉnh sửa menu</span>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav
+        id="main-navbar"
+        class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+    >
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+{{end}}
