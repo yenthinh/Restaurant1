@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Admin Menu</title>
+    <title>Thực đơn</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -74,7 +74,8 @@
                         <td>
                             {{if ne .Hide false}}
                             <form action="/admin/updatemenu/action/{{.ID}}" method="post">
-                                <button name="hide" type="submit" style="background-color: red;">Ẩn
+                                <button name="hide" type="submit" style="background-color: rgb(255, 105, 35);border: none;">
+                                    Ẩn
                                 </button>
                             </form>
                             {{else}}
@@ -82,8 +83,9 @@
                         </td>
                         <td>
                             {{if ne .Hide true}}
-                            <form action="/admin/updatemenu/action/{{.ID}}" method="post">
-                                <button name="hide" type="submit" style="background-color: red;">Hiện
+                            <form action="/admin/displaymenu/action/{{.ID}}" method="post">
+                                <button name="hide" type="submit" style="background-color:rgb(3, 247, 36); border: none;">
+                                    Hiện
                                 </button>
                             </form>
                             {{else}}

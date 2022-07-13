@@ -24,6 +24,9 @@ func UpdateHide(db *gorm.DB, id int, hide bool) {
 func Delete(db *gorm.DB, i Product, id int) {
 	db.Where("id = ?", id).Delete(&i)
 }
+func DeleteHide(db *gorm.DB, id int, hide bool) {
+	db.Select("Hide").Where("id = ?", id).Updates(Product{Hide: hide})
+}
 
 func GetProduct(db *gorm.DB, i *Product, name, inger, price string) {
 	db.Where("name = ? and inger = ? and price = ?", name, inger, price).First(i)

@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"restaurant/models"
 
@@ -22,7 +21,4 @@ func Index(ctx *gin.Context) {
 	data.Products = product
 	data.Peoples=people
 	ctx.HTML(http.StatusOK, "index.html", data) //nil == null
-}
-func ArrivalAction(ctx *gin.Context) {
-	fmt.Print("DA VAO ARRIVAL")
 }

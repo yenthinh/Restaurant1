@@ -74,3 +74,14 @@ func UpdateMenu(ctx *gin.Context){
 	models.UpdateHide(db, id, false)
 	ctx.Redirect(http.StatusSeeOther, "/admin/menu")
 }
+func DisplayMenu(ctx *gin.Context){
+	fmt.Print("Display Menu")
+	idStr := ctx.Param("id_product")
+	id, err := strconv.Atoi(idStr)
+	if err != nil{
+		panic(err)
+	}
+	db:= models.OpenDB()
+	models.DeleteHide(db, id, true)
+	ctx.Redirect(http.StatusSeeOther, "/admin/menu")
+}

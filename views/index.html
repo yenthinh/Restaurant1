@@ -162,22 +162,23 @@
                                     <p
                                         class="animate__animated animate__fadeInUp"
                                     >
-                                    Jolly Jolly là hệ thống chuỗi nhà hàng món Âu được thành lập 
-                                    vào năm 2000 tại Việt Nam phục vụ trực tiếp xuyên quốc gia lớn,
-                                    tích hợp các đặc tính, hương vị của lẩu từ khắp nơi trên thế giới.
+                                    Jolly Jolly là nhà hàng món Âu được thành lập 
+                                    vào năm 2000 tại Việt Nam và chỉ được phục vụ trực tiếp tại nhà hàng,
+                                    tích hợp các đặc tính, nguyên liệu, hương vị đặc trưng của món Âu, 
+                                    đảm bảo có thể khiến khách hàng hài lòng.
                                     </p>
                                     <div>
                                         <a
                                             href="#menu"
                                             class="btn-menu animate__animated animate__fadeInUp scrollto"
                                         >
-                                            Our Menu
+                                            Thực đơn
                                         </a>
                                         <a
                                             href="#book-a-table"
                                             class="btn-book animate__animated animate__fadeInUp scrollto"
                                         >
-                                            Book a Table
+                                            Đặt bàn
                                         </a>
                                     </div>
                                 </div>
@@ -441,7 +442,7 @@
                         <div class="col-lg-6 menu-item filter-starters">
                             <div class="menu-content">
                                 <a href="#">{{.Name}}</a>
-                                <span>{{.Price}}</span>
+                                <span>{{.Price}}VNĐ</span>
                             </div>
                             <div class="menu-ingredients">
                                 {{.Ingredients}}
@@ -907,8 +908,8 @@
                 <div class="container">
                     <div class="section-title">
                         <h2>
-                            Book a
-                            <span>Table</span>
+                            Đặt
+                            <span>Bàn</span>
                         </h2>
                         <p>
                             Ut possimus qui ut temporibus culpa velit eveniet
@@ -918,21 +919,20 @@
                     </div>
 
                     <form
-                        action="forms/book-a-table.php"
+                        action="/admin/arrival/action"
                         method="post"
-                        role="form"
                         class="php-email-form"
                     >
                         <div class="row">
                             <div class="col-lg-4 col-md-6 form-group">
                                 <input
                                     type="text"
-                                    name="name"
+                                    name="uname"
                                     class="form-control"
                                     id="name"
-                                    placeholder="Your Name"
+                                    placeholder="Tên của bạn"
                                     data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    data-msg="Vui lòng nhập ít nhất 4 ký tự"
                                 />
                                 <div class="validate"></div>
                             </div>
@@ -942,11 +942,11 @@
                                 <input
                                     type="email"
                                     class="form-control"
-                                    name="email"
+                                    name="umail"
                                     id="email"
-                                    placeholder="Your Email"
+                                    placeholder="Email"
                                     data-rule="email"
-                                    data-msg="Please enter a valid email"
+                                    data-msg="Vui lòng nhập email hợp lệ"
                                 />
                                 <div class="validate"></div>
                             </div>
@@ -958,9 +958,9 @@
                                     class="form-control"
                                     name="phone"
                                     id="phone"
-                                    placeholder="Your Phone"
+                                    placeholder="Số điện thoại"
                                     data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    data-msg="Vui lòng nhập số điện thoại của bạn"
                                 />
                                 <div class="validate"></div>
                             </div>
@@ -970,9 +970,9 @@
                                     name="date"
                                     class="form-control"
                                     id="date"
-                                    placeholder="Date"
+                                    placeholder="Ngày/tháng/năm"
                                     data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    data-msg="Vui lòng nhập ngày bạn đến"
                                 />
                                 <div class="validate"></div>
                             </div>
@@ -982,9 +982,9 @@
                                     class="form-control"
                                     name="time"
                                     id="time"
-                                    placeholder="Time"
+                                    placeholder="Thời gian"
                                     data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    data-msg="Vui lòng nhập thời gian cụ thể"
                                 />
                                 <div class="validate"></div>
                             </div>
@@ -992,11 +992,11 @@
                                 <input
                                     type="number"
                                     class="form-control"
-                                    name="people"
+                                    name="ofpeo"
                                     id="people"
-                                    placeholder="# of people"
+                                    placeholder="Số người"
                                     data-rule="minlen:1"
-                                    data-msg="Please enter at least 1 chars"
+                                    data-msg="Vui lòng chọn ít nhất 1 người"
                                 />
                                 <div class="validate"></div>
                             </div>
@@ -1004,9 +1004,9 @@
                         <div class="form-group mt-3">
                             <textarea
                                 class="form-control"
-                                name="message"
+                                name="mess"
                                 rows="5"
-                                placeholder="Message"
+                                placeholder="Lời nhắn cho chúng tôi"
                             ></textarea>
                             <div class="validate"></div>
                         </div>
@@ -1014,9 +1014,9 @@
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">
-                                Your booking request was sent. We will call back
-                                or send an Email to confirm your reservation.
-                                Thank you!
+                                Yêu cầu đặt bàn của bạn đã được gửi. Chúng tôi sẽ gọi lại
+                                hoặc gửi Email để xác nhận đặt phòng của bạn.
+                                Cảm ơn bạn!
                             </div>
                         </div>
                         <div class="text-center">
@@ -1055,20 +1055,6 @@
                                 <div class="member-info">
                                     <h4>Walter White</h4>
                                     <span>Master Chef</span>
-                                    <div class="social">
-                                        <a href="">
-                                            <i class="bi bi-twitter"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-facebook"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-linkedin"></i>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1085,20 +1071,6 @@
                                 <div class="member-info">
                                     <h4>Sarah Jhonson</h4>
                                     <span>Patissier</span>
-                                    <div class="social">
-                                        <a href="">
-                                            <i class="bi bi-twitter"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-facebook"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-linkedin"></i>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1115,20 +1087,6 @@
                                 <div class="member-info">
                                     <h4>William Anderson</h4>
                                     <span>Cook</span>
-                                    <div class="social">
-                                        <a href="">
-                                            <i class="bi bi-twitter"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-facebook"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                        <a href="">
-                                            <i class="bi bi-linkedin"></i>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1351,21 +1309,21 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-6 info">
                                 <i class="bi bi-geo-alt"></i>
-                                <h4>Location:</h4>
+                                <h4>Địa chỉ:</h4>
                                 <p>
-                                    A108 Adam Street
+                                    99/27 Lê Đình Cẩn
                                     <br />
-                                    New York, NY 535022
+                                    Bình Tân, Hồ Chí Minh
                                 </p>
                             </div>
 
                             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
                                 <i class="bi bi-clock"></i>
-                                <h4>Open Hours:</h4>
+                                <h4>Giờ mở cửa:</h4>
                                 <p>
-                                    Monday-Saturday:
+                                    Thứ Hai-Thứ Bảy:
                                     <br />
-                                    11:00 AM - 2300 PM
+                                    11:00 AM - 23:00 PM
                                 </p>
                             </div>
 
@@ -1373,9 +1331,9 @@
                                 <i class="bi bi-envelope"></i>
                                 <h4>Email:</h4>
                                 <p>
-                                    info@example.com
+                                    jjrestaurant@gmail.com
                                     <br />
-                                    contact@example.com
+                                    contact.jjrestaurant@gmail.com
                                 </p>
                             </div>
 
@@ -1383,9 +1341,9 @@
                                 <i class="bi bi-phone"></i>
                                 <h4>Call:</h4>
                                 <p>
-                                    +1 5589 55488 51
+                                    +84 938734110
                                     <br />
-                                    +1 5589 22475 14
+                                    +84 931308446
                                 </p>
                             </div>
                         </div>
@@ -1404,7 +1362,7 @@
                                     name="name"
                                     class="form-control"
                                     id="name"
-                                    placeholder="Your Name"
+                                    placeholder="Tên Của Bạn"
                                     required
                                 />
                             </div>
@@ -1414,7 +1372,7 @@
                                     class="form-control"
                                     name="email"
                                     id="email"
-                                    placeholder="Your Email"
+                                    placeholder="Email"
                                     required
                                 />
                             </div>
@@ -1425,7 +1383,7 @@
                                 class="form-control"
                                 name="subject"
                                 id="subject"
-                                placeholder="Subject"
+                                placeholder="Chủ đề"
                                 required
                             />
                         </div>
@@ -1434,7 +1392,7 @@
                                 class="form-control"
                                 name="message"
                                 rows="5"
-                                placeholder="Message"
+                                placeholder="Lời nhắn"
                                 required
                             ></textarea>
                         </div>
@@ -1442,11 +1400,11 @@
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">
-                                Your message has been sent. Thank you!
+                                Lời nhắn của bạn đã được gửi. Xin cảm ơn!
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit">Send Message</button>
+                            <button type="submit">Gửi</button>
                         </div>
                     </form>
                 </div>
@@ -1480,19 +1438,6 @@
                         <i class="bx bxl-linkedin"></i>
                     </a>
                 </div>
-                <div class="copyright">
-                    &copy; Copyright
-                    <strong><span>Delicious</span></strong>
-                    . All Rights Reserved
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/ -->
-                    Designed by
-                    <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
             </div>
         </footer>
         <!-- End Footer -->
@@ -1509,7 +1454,6 @@
         <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
         <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
         <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="/assets/vendor/php-email-form/validate.js"></script>
 
         <!-- Template Main JS File -->
         <script src="/assets/js/main.js"></script>
