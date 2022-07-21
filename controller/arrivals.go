@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"restaurant/models"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,7 +12,8 @@ import (
 func Arrival(ctx *gin.Context) {
 	var arr []models.Arrival
 	db := models.OpenDB()
-	models.GetArrivals(db, &arr)
+	check:= true
+	models.GetArrivals(db, &arr, check)
 	ctx.HTML(http.StatusOK, "arrival.html", arr)
 }
 func ArrivalAction(ctx *gin.Context) {
@@ -34,4 +36,26 @@ func ArrivalAction(ctx *gin.Context) {
 		panic(err)
 	}
 	ctx.Redirect(http.StatusSeeOther, "/")
+}
+func ArrivalCheck(ctx *gin.Context){
+	fmt.Print("Checked")
+	idStr := ctx.Param("id_arrival")
+	id, err := strconv.Atoi(idStr)
+	if err != nil{
+		panic(err)
+	}
+	db:= models.OpenDB()
+	models.UpdaTeCheck(db, id, true)
+	ctx.Redirect(http.StatusSeeOther, "/admin/arrival")
+}
+func ArrivalChecked(ctx *gin.Context){
+	fmt.Print("Checked")
+	idStr := ctx.Param("id_arrival")
+	id, err := strconv.Atoi(idStr)
+	if err != nil{
+		panic(err)
+	}
+	db:= models.OpenDB()
+	models.UpdaTeCheck(db, id, false)
+	ctx.Redirect(http.StatusSeeOther, "/admin/arrival")
 }

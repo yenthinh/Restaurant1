@@ -24,5 +24,7 @@ func InitController() {
 	router.POST("/admin/arrival/action",ArrivalAction)
 	router.POST("/admin/updatemenu/action/:id_product", UpdateMenu) //API
 	router.POST("/admin/displaymenu/action/:id_product", DisplayMenu)
+	router.POST("/admin/arrivalcheck/action/:id_arrival",ArrivalCheck)
+	router.POST("/admin/arrivalchecked/action/:id_arrival",ArrivalChecked)
 	router.Run()
 }

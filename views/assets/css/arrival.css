@@ -32,7 +32,7 @@ body {
   }
   ul li div{
     border: #8B4513 5px ridge;
-    border-radius: 5px ;
+    border-radius: 15px ;
     color: #8B4513 ;
     background:#F5F5DC;
     display:inline-block;
@@ -45,12 +45,4 @@ body {
   ul li{
     margin:1em;
   }
-  ul li div table{
-    margin: 5px;
-  }
-  ul li div table tr{
-    margin: 5px;
-  }
-  ul li div table tr td{
-    padding-left: 30px;
-  }
+ 
