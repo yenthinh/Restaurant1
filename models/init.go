@@ -26,5 +26,6 @@ func Migrate() {
 	db.AutoMigrate(&Product{})
 	db.AutoMigrate(&People{})
 	db.AutoMigrate(&Arrival{})
+	db.AutoMigrate(&Contact{})
 	CloseDB(db)
 }

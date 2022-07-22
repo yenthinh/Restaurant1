@@ -86,10 +86,9 @@
                                 </td>
                                 <td>
                                 {{if ne .Check false}}
-                                <form action="/admin/arrivalchecked/action/{{.ID}}" method="post">
                                         <button
+                                            class="disabled"
                                             name="check"
-                                            type="submit"
                                             style="
                                             margin-left: 85px;
                                             background-color: rgb(2, 233, 2);
@@ -99,7 +98,6 @@
                                             height: 30px;">
                                             KH đã đến
                                         </button>
-                                </form>
                                 {{else}}
                                 {{end}}
                             </td>
@@ -109,13 +107,13 @@
                 {{end}}
                 </li>
             </ul>
-         <!-- Vendor JS Files
+         Vendor JS Files
         <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
         <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
         <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
         <script src="/assets/vendor/php-email-form/validate.js"></script>
 
-        <!-- Template Main JS File -->
+        <!-- Template Main JS File
         <script src="/assets/js/main.js"></script> -->
     </body>

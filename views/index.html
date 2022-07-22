@@ -1282,8 +1282,7 @@
                 <div class="container">
                     <div class="section-title">
                         <h2>
-                            <span>Contact</span>
-                            Us
+                            <span>Liên hệ</span>
                         </h2>
                         <p>
                             Ut possimus qui ut temporibus culpa velit eveniet
@@ -1350,16 +1349,14 @@
                     </div>
 
                     <form
-                        action="forms/contact.php"
+                        action="admin/contact/action"
                         method="post"
-                        role="form"
-                        class="php-email-form"
-                    >
+                        class="php-email-form">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input
                                     type="text"
-                                    name="name"
+                                    name="yname"
                                     class="form-control"
                                     id="name"
                                     placeholder="Tên Của Bạn"
@@ -1370,7 +1367,7 @@
                                 <input
                                     type="email"
                                     class="form-control"
-                                    name="email"
+                                    name="ymail"
                                     id="email"
                                     placeholder="Email"
                                     required
@@ -1381,7 +1378,7 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                name="subject"
+                                name="topic"
                                 id="subject"
                                 placeholder="Chủ đề"
                                 required
@@ -1390,7 +1387,7 @@
                         <div class="form-group mt-3">
                             <textarea
                                 class="form-control"
-                                name="message"
+                                name="ymess"
                                 rows="5"
                                 placeholder="Lời nhắn"
                                 required
