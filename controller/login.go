@@ -22,9 +22,9 @@ func LoginAction(ctx *gin.Context) {
 	}
 	db := models.OpenDB()
 	models.GetAccount(db, &account, dataFromFE.Email, dataFromFE.Password)
-	if account.ID == 0 {
+	if account.ID == 0{
 		ctx.Redirect(http.StatusSeeOther, "/login")
 	}
 	ctx.SetCookie("account_id", strconv.Itoa(int(account.ID)), int(time.Now().Unix()+time.Now().AddDate(0, 0, 1).Unix()), "/", "*", false, false)
-	ctx.Redirect(http.StatusSeeOther, "/admin/menu")
+	ctx.Redirect(http.StatusSeeOther, "/admin")
 }

@@ -52,6 +52,9 @@
         {{template "navbar"}}
         <!--Main layout-->
         <main style="margin-top: 58px">
+            <label style="font-size: 35px; padding-left: 400px;font-weight: 100;">
+                Thêm đầu bếp
+                </label>
             <div class="container pt-4">
                 <form action="/admin/addchef/action" method="post">
                     <div class="mb-3 row">
@@ -88,12 +91,12 @@
                         </label>
                         <div class="col-sm-10">
                             <input
-                                type="number"
+                                type="file" id="myFile" name="pic">
+                                <!-- type="number"
                                 class="form-control-plaintext bg-warning"
                                 name="pic"
                                 id="anh"
-                                value=""
-                            />
+                                value="" -->
                         </div>
                     </div>
                     <input class="btn btn-success" value="Lưu" type="submit" />
