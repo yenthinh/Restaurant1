@@ -1,12 +1,14 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
 type People struct {
 	gorm.Model
-	Names       string `gorm:"not null;size:150" form:"names"`
-	Position	string `gorm:"not null;size:300" form:"posi"`
-	Picture     string `gorm:"image" form:"pic"`
+	Names    string `gorm:"not null;size:150" form:"names"`
+	Position string `gorm:"not null;size:300" form:"posi"`
+	Picture  string  `form:"pic"`
 }
 
 func CreatePeople(db *gorm.DB, i People) error {

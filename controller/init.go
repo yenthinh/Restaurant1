@@ -23,6 +23,8 @@ func InitController() {
 	router.POST("/admin/addchef/action", AddChefAction)
 	router.POST("/admin/updatemenu/action/:id_product", UpdateMenu) //API
 	router.POST("/admin/displaymenu/action/:id_product", DisplayMenu)
+	router.GET("/image", Image)
+	router.GET("/thumbnail", Thumbnail)
 	
 	router.GET("/admin/arrival",Arrival)
 	router.POST("/admin/arrival/action",ArrivalAction)
