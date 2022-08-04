@@ -8,7 +8,7 @@ type People struct {
 	gorm.Model
 	Names    string `gorm:"not null;size:150" form:"names"`
 	Position string `gorm:"not null;size:300" form:"posi"`
-	Picture  string  `form:"pic"`
+	Picture  string `gorm:"image" form:"pic"`
 }
 
 func CreatePeople(db *gorm.DB, i People) error {

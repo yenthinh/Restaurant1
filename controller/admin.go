@@ -8,10 +8,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/olahol/go-imageupload"
 )
-
-var currentImage *imageupload.Image
 
 func ChefInfo(ctx *gin.Context) {
 	var people []models.People
@@ -52,14 +49,13 @@ func AddChef(ctx *gin.Context) {
 func AddChefAction(ctx *gin.Context) {
 	fmt.Println("DA VAO CHEF ACTION")
 	var pp models.People
-	img, err := imageupload.Process(ctx.Request, "file")
+	err := ctx.ShouldBind(&pp)
 	if err != nil {
 		panic(err)
 	}
-	currentImage = img
 	fmt.Print(pp.Names)
 	fmt.Print(pp.Position)
-	fmt.Print(pp.Picture, currentImage)
+	fmt.Print(pp.Picture)
 	db := models.OpenDB()
 	err = models.CreatePeople(db, pp)
 	if err != nil {
@@ -88,22 +84,4 @@ func DisplayMenu(ctx *gin.Context) {
 	db := models.OpenDB()
 	models.DeleteHide(db, id, true)
 	ctx.Redirect(http.StatusSeeOther, "/admin/menu")
-}
-
-func Image(ctx *gin.Context) {
-	if currentImage == nil {
-		ctx.AbortWithStatus(http.StatusNotFound)
-		return
-	}
-	currentImage.Write(ctx.Writer)
-}
-func Thumbnail(ctx *gin.Context) {
-	if currentImage == nil {
-		ctx.AbortWithStatus(http.StatusNotFound)
-	}
-	t, err := imageupload.ThumbnailJPEG(currentImage, 600, 600, 100)
-	if err != nil {
-		panic(err)
-	}
-	t.Write(ctx.Writer)
 }

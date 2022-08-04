@@ -2,7 +2,7 @@
   "use strict";
 
   /**
-   * Easy selector helper function
+   * Selector helper function
    */
   const select = (el, all = false) => {
     el = el.trim()
@@ -14,7 +14,7 @@
   }
 
   /**
-   * Easy event listener function
+   * Event listener function
    */
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
@@ -28,7 +28,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * On scroll event listener 
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
